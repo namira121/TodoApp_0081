@@ -85,6 +85,13 @@ class _TodoPageState extends State<TodoPage> {
                                 icon: Icon(Icons.calendar_today)
                               )
                             ),
+                            validator: (value) {
+                              if (value!.isEmpty){
+                                return 'Tanggal tidak boleh kosong';
+                              }
+                              return null;
+                            },
+                            autovalidateMode: AutovalidateMode.onUserInteraction,
                             readOnly: true,
                           ),
                         FilledButton(onPressed: (){
