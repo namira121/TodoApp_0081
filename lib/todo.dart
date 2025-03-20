@@ -11,6 +11,13 @@ class _TodoPageState extends State<TodoPage> {
   final _key = GlobalKey<FormState>();
   final TextEditingController _taskcontroller = TextEditingController();
   List<String> listTugas = [];
+
+  void addData(){
+    setState(() {
+      listTugas.add(_taskcontroller.text);
+      _taskcontroller.clear();
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
