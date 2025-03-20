@@ -27,6 +27,20 @@ class _TodoPageState extends State<TodoPage> {
       )
     );
   }
+  Future<void> _selectDateTime(BuildContext context)async{
+    List<DateTime>? dateTimeList = await showOmniDateTimeRangePicker(
+      context: context,
+      is24HourMode: true,
+      minutesInterval: 1,
+      isForce2Digits: true,
+    );
+    if(dateTimeList != null && dateTimeList.isNotEmpty){
+      setState(() {
+        _datecontroller.text =
+        "${dateTimeList.first.toLocal()} - ${dateTimeList.last.toLocal()}";
+      });
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
