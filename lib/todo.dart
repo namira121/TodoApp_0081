@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:omni_datetime_picker/omni_datetime_picker.dart';
+import 'dart:async';
 
 class TodoPage extends StatefulWidget {
   const TodoPage({super.key});
@@ -120,7 +121,14 @@ class _TodoPageState extends State<TodoPage> {
                             value: listTugas[index]["completed"] ?? false,
                             onChanged: (bool? value){
                               setState(() {
-                                listTugas[index]["completed"] = value ?? false;
+                                listTugas[index]["completed"] = value!;
+                                if(value){
+                                  Future.delayed(Duration(seconds: 5),(){
+                                    setState(() {
+                                      listTugas.removeAt(index);
+                                    });
+                                  });
+                                }
                               });
                             },
                           ),
