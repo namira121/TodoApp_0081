@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:omni_datetime_picker/omni_datetime_picker.dart';
 
 class TodoPage extends StatefulWidget {
   const TodoPage({super.key});
@@ -10,6 +11,7 @@ class TodoPage extends StatefulWidget {
 class _TodoPageState extends State<TodoPage> {
   final _key = GlobalKey<FormState>();
   final TextEditingController _taskcontroller = TextEditingController();
+  final TextEditingController _datecontroller = TextEditingController();
   List<String> listTugas = [];
 
   void addData(){
