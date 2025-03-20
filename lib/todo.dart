@@ -55,8 +55,7 @@ class _TodoPageState extends State<TodoPage> {
                     key: _key,
                     child: Row(
                       children: [
-                        Expanded(
-                          child: TextFormField(
+                          TextFormField(
                             controller: _taskcontroller,
                             decoration: InputDecoration(
                               label: Text('Tugas'),
@@ -69,8 +68,22 @@ class _TodoPageState extends State<TodoPage> {
                               return null;
                             },
                             autovalidateMode: AutovalidateMode.onUserInteraction,
-                          )
-                        ),
+                          ),
+                          TextFormField(
+                            controller: _datecontroller,
+                            decoration: InputDecoration(
+                              labelText: "Tanggal dan Waktu",
+                              hintText: "Pilih tanggal dan waktu",
+                              suffixIcon: IconButton(
+                                onPressed: () =>_selectDateTime(context), 
+                                icon: Icon(Icons.calendar_today)
+                              )
+                            ),
+                            readOnly: true,
+                          ),
+
+                          
+                        
                         FilledButton(onPressed: (){
                           if(_key.currentState!.validate()){
                             addData();
@@ -99,7 +112,8 @@ class _TodoPageState extends State<TodoPage> {
                       ),
                     );
                   },
-                ))
+                )
+              )
             ],
           ),
         )
