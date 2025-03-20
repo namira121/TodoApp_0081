@@ -21,7 +21,7 @@ class _TodoPageState extends State<TodoPage> {
         "date": _datecontroller.text,
       });
       _taskcontroller.clear();
-      _datecontroller.clear()
+      _datecontroller.clear();
     });
 
     ScaffoldMessenger.of(context).showSnackBar(
@@ -109,7 +109,10 @@ class _TodoPageState extends State<TodoPage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Nama Tugas'), Text(listTugas[index])
+                          Text('Nama Tugas'), 
+                          Text(listTugas[index]["task"]!),
+                          Text('Tanggal & Waktu'),
+                          Text(listTugas[index]["date"]!)
                         ],
                       ),
                     );
