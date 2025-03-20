@@ -12,12 +12,16 @@ class _TodoPageState extends State<TodoPage> {
   final _key = GlobalKey<FormState>();
   final TextEditingController _taskcontroller = TextEditingController();
   final TextEditingController _datecontroller = TextEditingController();
-  List<String> listTugas = [];
+  List<Map<String,String>> listTugas = [];
 
   void addData(){
     setState(() {
-      listTugas.add(_taskcontroller.text);
+      listTugas.add({
+        "task": _taskcontroller.text,
+        "date": _datecontroller.text,
+      });
       _taskcontroller.clear();
+      _datecontroller.clear()
     });
 
     ScaffoldMessenger.of(context).showSnackBar(
