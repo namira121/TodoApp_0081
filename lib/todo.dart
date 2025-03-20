@@ -59,7 +59,14 @@ class _TodoPageState extends State<TodoPage> {
                     }
                   }, child: Text('Submit'))
                 ],
-              )
+              ),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: listTugas.length,
+                  itemBuilder: (context, index){
+                    
+                  },
+                ))
             ],
           ),
         )
