@@ -16,11 +16,24 @@ class _TodoPageState extends State<TodoPage> {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              
+              Form(
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          label: Text('Tugas'),
+                          
+                        ),
+                      )
+                    )
+                  ],
+                )
+              )
             ],
           ),
-          )
-        ),
+        )
+      ),
     );
   }
 }
