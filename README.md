@@ -1,16 +1,8 @@
 # todoapp_0081
 
-A new Flutter project.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![todo tugas](https://github.com/user-attachments/assets/ed162fb5-5b4e-434f-9f3a-711bb1b3c1e2)
+![date time picker](https://github.com/user-attachments/assets/35296647-09a4-4e32-ac66-b4c4636f3303)
+![data simpan](https://github.com/user-attachments/assets/0658940c-9240-4859-a896-fa85fec45d1c)
+![ubah status](https://github.com/user-attachments/assets/a4e899f8-8b6d-4431-83bd-da7a4d04abd8)
+![validasi](https://github.com/user-attachments/assets/03298afd-a501-42ce-bcc0-d96c81413c01)
