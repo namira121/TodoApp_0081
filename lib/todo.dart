@@ -64,7 +64,20 @@ class _TodoPageState extends State<TodoPage> {
                 child: ListView.builder(
                   itemCount: listTugas.length,
                   itemBuilder: (context, index){
-                    
+                    return Container(
+                      decoration: BoxDecoration(
+                        color: Colors.pink.shade100,
+                        borderRadius: BorderRadius.circular(10)
+                      ),
+                      padding: const EdgeInsets.all(20),
+                      margin: const EdgeInsets.symmetric(vertical: 8),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Nama Tugas'), Text(listTugas[index])
+                        ],
+                      ),
+                    );
                   },
                 ))
             ],
