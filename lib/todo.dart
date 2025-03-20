@@ -8,6 +8,8 @@ class TodoPage extends StatefulWidget {
 }
 
 class _TodoPageState extends State<TodoPage> {
+  final _key = GlobalKey<FormState>();
+  final TextEditingController _taskcontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,26 +20,33 @@ class _TodoPageState extends State<TodoPage> {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              Form(
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          label: Text('Tugas'),
-                          hintText: 'Masukkan tugas yang ingin dilakukan'
-                        ),
-                        validator: (value) {
-                          if(value!.isEmpty){
-                            return 'Tugas tidak boleh kosong';
-                          }
-                          return null;
-                        },
-                        autovalidateMode: AutovalidateMode.onUserInteraction,
-                      )
+              Row(
+                children: [
+                  Form(
+                    key: _key,
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: TextFormField(
+                            controller: _taskcontroller,
+                            decoration: InputDecoration(
+                              label: Text('Tugas'),
+                              hintText: 'Masukkan tugas yang ingin dilakukan'
+                            ),
+                            validator: (value) {
+                              if(value!.isEmpty){
+                                return 'Tugas tidak boleh kosong';
+                              }
+                              return null;
+                            },
+                            autovalidateMode: AutovalidateMode.onUserInteraction,
+                          )
+                        )
+                      ],
                     )
-                  ],
-                )
+                  ),
+                  FilledButton(onPressed: (){}, child: Text('Submit'))
+                ],
               )
             ],
           ),
