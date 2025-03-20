@@ -10,6 +10,7 @@ class TodoPage extends StatefulWidget {
 class _TodoPageState extends State<TodoPage> {
   final _key = GlobalKey<FormState>();
   final TextEditingController _taskcontroller = TextEditingController();
+  List<String> listTugas = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
