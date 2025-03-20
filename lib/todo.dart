@@ -17,6 +17,13 @@ class _TodoPageState extends State<TodoPage> {
       listTugas.add(_taskcontroller.text);
       _taskcontroller.clear();
     });
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('Tugas berhasil ditambahkan!'),
+        duration: Duration(seconds: 3),
+      )
+    );
   }
   @override
   Widget build(BuildContext context) {
