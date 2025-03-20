@@ -53,7 +53,8 @@ class _TodoPageState extends State<TodoPage> {
             children: [
                   Form(
                     key: _key,
-                    child: Row(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                           TextFormField(
                             controller: _taskcontroller,
@@ -81,9 +82,6 @@ class _TodoPageState extends State<TodoPage> {
                             ),
                             readOnly: true,
                           ),
-
-                          
-                        
                         FilledButton(onPressed: (){
                           if(_key.currentState!.validate()){
                             addData();
