@@ -12,13 +12,14 @@ class _TodoPageState extends State<TodoPage> {
   final _key = GlobalKey<FormState>();
   final TextEditingController _taskcontroller = TextEditingController();
   final TextEditingController _datecontroller = TextEditingController();
-  List<Map<String,String>> listTugas = [];
+  List<Map<String, dynamic>> listTugas = [];
 
   void addData(){
     setState(() {
       listTugas.add({
         "task": _taskcontroller.text,
         "date": _datecontroller.text,
+        "completed": false,
       });
       _taskcontroller.clear();
       _datecontroller.clear();
@@ -106,15 +107,38 @@ class _TodoPageState extends State<TodoPage> {
                       ),
                       padding: const EdgeInsets.all(20),
                       margin: const EdgeInsets.symmetric(vertical: 8),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      child: Row(
                         children: [
-                          Text('Nama Tugas'), 
-                          Text(listTugas[index]["task"]!),
-                          Text('Tanggal & Waktu'),
-                          Text(listTugas[index]["date"]!)
+                          Checkbox(
+                            value: listTugas[index]["completed"] ?? false,
+                            onChanged: (bool? value){
+                              setState(() {
+                                listTugas[index]["completed"] = value ?? false;
+                              });
+                            },
+                          ),
+                          Expanded(
+                            child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Nama Tugas:'), 
+                              Text(listTugas[index]["task"]!),
+                              Text('Tanggal & Waktu'),
+                              Text(listTugas[index]["date"]!),
+                              SizedBox(height: 5),
+                              Text(
+                                listTugas[index]["completed"] ? 'Completed' : 'Not Completed',
+                                style: TextStyle(
+                                  color: listTugas[index]["completed"] ? Colors.green.shade400 : Colors.red,
+                                  fontWeight: FontWeight.bold
+                                ),
+                              )
                         ],
                       ),
+                          )
+                        ],
+                      ),
+                      
                     );
                   },
                 )
