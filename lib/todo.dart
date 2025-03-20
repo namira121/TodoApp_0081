@@ -53,7 +53,11 @@ class _TodoPageState extends State<TodoPage> {
                       ],
                     )
                   ),
-                  FilledButton(onPressed: (){}, child: Text('Submit'))
+                  FilledButton(onPressed: (){
+                    if(_key.currentState!.validate()){
+                      addData();
+                    }
+                  }, child: Text('Submit'))
                 ],
               )
             ],
