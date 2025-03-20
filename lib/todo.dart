@@ -140,9 +140,15 @@ class _TodoPageState extends State<TodoPage> {
                                   fontWeight: FontWeight.bold
                                 ),
                               )
-                        ],
-                      ),
-                          )
+                            ]
+                            
+                            )
+                          ),
+                          IconButton(onPressed: (){
+                            setState(() {
+                              listTugas.removeAt(index);
+                            });
+                          }, icon: Icon(Icons.delete, color: Colors.grey,))
                         ],
                       ),
                       
