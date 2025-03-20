@@ -62,7 +62,16 @@ class _TodoPageState extends State<TodoPage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                          TextFormField(
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.green.shade100,
+                            borderRadius: BorderRadius.circular(10)
+                          ),
+                          padding: EdgeInsets.all(10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              TextFormField(
                             controller: _taskcontroller,
                             decoration: InputDecoration(
                               label: Text('Tugas'),
@@ -95,11 +104,17 @@ class _TodoPageState extends State<TodoPage> {
                             autovalidateMode: AutovalidateMode.onUserInteraction,
                             readOnly: true,
                           ),
-                        FilledButton(onPressed: (){
-                          if(_key.currentState!.validate()){
-                            addData();
-                          }
-                        }, child: Text('Submit')),
+                          Center(
+                            child: FilledButton(onPressed: (){
+                            if(_key.currentState!.validate()){
+                              addData();
+                            }
+                            }, child: Text('Submit')),
+                          )
+                            ],
+                          ),
+                        ),
+                          
                       ],
                     )
                   ),
