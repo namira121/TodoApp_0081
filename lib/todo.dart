@@ -23,8 +23,14 @@ class _TodoPageState extends State<TodoPage> {
                       child: TextFormField(
                         decoration: InputDecoration(
                           label: Text('Tugas'),
-                          
+                          hintText: 'Masukkan tugas yang ingin dilakukan'
                         ),
+                        validator: (value) {
+                          if(value!.isEmpty){
+                            return 'Tugas tidak boleh kosong';
+                          }
+                          return null;
+                        },
                       )
                     )
                   ],
