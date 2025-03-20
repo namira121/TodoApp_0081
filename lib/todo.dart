@@ -28,8 +28,6 @@ class _TodoPageState extends State<TodoPage> {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              Row(
-                children: [
                   Form(
                     key: _key,
                     child: Row(
@@ -49,17 +47,16 @@ class _TodoPageState extends State<TodoPage> {
                             },
                             autovalidateMode: AutovalidateMode.onUserInteraction,
                           )
-                        )
+                        ),
+                        FilledButton(onPressed: (){
+                          if(_key.currentState!.validate()){
+                            addData();
+                          }
+                        }, child: Text('Submit')),
                       ],
                     )
                   ),
-                  FilledButton(onPressed: (){
-                    if(_key.currentState!.validate()){
-                      addData();
-                    }
-                  }, child: Text('Submit'))
-                ],
-              ),
+
               Expanded(
                 child: ListView.builder(
                   itemCount: listTugas.length,
